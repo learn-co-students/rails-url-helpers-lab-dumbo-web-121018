@@ -1,0 +1,12 @@
+<%= "#{@student.first_name} #{@student.last_name}" %>
+
+<form action="<%= "/students/#{@student.id}" %>" method="post">
+  <input type="hidden" name="_method" value="patch" />
+  <label>status:</label>
+  <label><%= @student.active %></label>
+  <input checked type="radio" name="active" value="<%= @student.active %>">
+  <label><%= !@student.active %></label>
+  <input type="radio" name="active" value="<%= !@student.active %>">
+  <input type="submit">
+
+</form>
